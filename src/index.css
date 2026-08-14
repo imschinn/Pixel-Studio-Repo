@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — derived from the Pixel Studio mark and their own gold-on-charcoal brochure */
+  --color-ink: #0b0a0d;
+  --color-ink-soft: #141217;
+  --color-surface: #1a1720;
+  --color-surface-2: #221e29;
+  --color-line: #33303c;
+
+  --color-ivory: #f6f1e7;
+  --color-ivory-dim: #cfc8ba;
+  --color-muted: #9c95a8;
+
+  --color-gold: #c9a24b;
+  --color-gold-soft: #e3c988;
+  --color-rose: #a63a34;
+  --color-rose-soft: #c25a4f;
+
+  /* facet chips pulled directly from the logo triangles */
+  --color-facet-orange: #f0821e;
+  --color-facet-amber: #ffb31a;
+  --color-facet-blue: #17479e;
+  --color-facet-blue-soft: #3d5aa8;
+  --color-facet-green: #2f7d32;
+  --color-facet-mint: #23e896;
+  --color-facet-red: #f0142f;
+  --color-facet-sky: #4fb6e8;
+
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  --shadow-soft: 0 30px 80px -30px rgb(0 0 0 / 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* visible focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-display { font-family: var(--font-display); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* thin gold hairline rule used as a recurring signature accent */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(90deg, var(--color-gold-soft), var(--color-gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ink); }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
