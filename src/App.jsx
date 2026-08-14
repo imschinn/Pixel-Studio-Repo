@@ -27,8 +27,8 @@ function App() {
   return (
     <AuthProvider>
       <LoadingScreen show={showLoader} />
-<BrowserRouter basename="/Pixel-Studio-Repo">
-  <Routes>
+      <BrowserRouter basename="/Pixel-Studio-Repo">
+        <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
